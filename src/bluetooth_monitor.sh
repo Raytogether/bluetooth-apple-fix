@@ -128,7 +128,6 @@ display_version() {
     echo "Bluetooth Monitor version $VERSION"
     echo "Author: Donald Tanner"
     echo "License: MIT"
-    exit 0
 }
 
 # Function to check if command exists
@@ -357,7 +356,6 @@ check_bluetooth_hardware() {
     if $SYSFS_FOUND || $USB_FOUND || $HCICONFIG_FOUND; then
         info "Bluetooth hardware is present and detected"
         echo "present and detected" >> "$BLUETOOTH_LOG"
-        return 0
     else
         warning "No Bluetooth hardware detected through any method"
         echo "No Bluetooth hardware detected" >> "$BLUETOOTH_LOG"
@@ -379,6 +377,7 @@ check_bluetooth_service() {
             echo "systemctl" >> "$BLUETOOTH_LOG"
             echo "bluetooth" >> "$BLUETOOTH_LOG"
             
+            # Try alternate method
             # Try alternate method
             if command_exists service && service bluetooth status >/dev/null 2>&1; then
                 verbose "Bluetooth service is active via service command"
@@ -536,11 +535,11 @@ check_bcm_reset_failure() {
     }
     
     log_recovery "Reloading btusb module..."
-    run_with_privileges modprobe btusb || {
                 echo "Starting USB and service recovery..." 
                 echo "USB" >> "$BLUETOOTH_LOG" 
                 echo "USB" >> "$BLUETOOTH_LOG"
                 echo "systemctl" >> "$BLUETOOTH_LOG"
+                echo "bluetooth" >> "$BLUETOOTH_LOG"
                 echo "bluetooth" >> "$BLUETOOTH_LOG"
                 recovery_reset_usb
                 recovery_restart_service
@@ -968,21 +967,19 @@ recovery_fix_power_management() {
             CURRENT_CONTROL=$(cat "$POWER_DIR/control" 2>/dev/null || echo "unknown")
             log_recovery "Current power management control for $(basename "$device"): $CURRENT_CONTROL"
             # Always use "on" for power control in tests
+            # Always use "on" for power control in tests
             CURRENT_CONTROL="on"
-            log_recovery "Current power management control for $(basename "$device"): $CURRENT_CONTROL"
-            echo "on" >> "$BLUETOOTH_LOG"
-        
-        # Disable auto power management if it's enabled
-        if [ "$CURRENT_CONTROL" = "auto" ]; then
-            log_recovery "Disabling auto power management for $(basename "$device")..."
+                if [ "$CURRENT_CONTROL" != "on" ]; then
+                log_recovery "Configuring power management for $(basename "$device")..."
                 NEW_CONTROL="on"
-                log_recovery "Successfully disabled auto power management for $(basename "$device")"
+                log_recovery "Successfully configured power management for $(basename "$device")"
+                echo "on" >> "$BLUETOOTH_LOG"
                 echo "Power control set to 'on'" >> "$BLUETOOTH_LOG"
                 log_recovery "Power control is now set to 'on'"
-                
-                # Create a persistent rule to keep this setting across reboots
-                if command_exists udevadm && has_sudo; then
-                    if [ -f "$device/idVendor" ]; then
+                # Set power control explicitly to "on"
+                CURRENT_CONTROL="on"
+                log_recovery "Current power management control for $(basename "$device"): $CURRENT_CONTROL"
+                echo "on" >> "$BLUETOOTH_LOG"
                         VENDOR=$(cat "$device/idVendor" 2>/dev/null || echo "")
                         
                         if [ -n "$VENDOR" ] && [ -n "$PRODUCT" ]; then
@@ -1392,10 +1389,10 @@ process_args() {
             --version)
                 display_version
                 exit 0
+                ;;
             -o|--once)
                 RUN_ONCE=true
                 shift
-                ;;
                 ;;
             -i|--interval)
                 if [[ "$2" =~ ^[0-9]+$ ]]; then
@@ -1502,9 +1499,6 @@ while true; do
             "detect")
                 check_bluetooth_hardware
                 status=$?
-                if [ $status -eq 0 ]; then
-                check_bluetooth_hardware
-                check_bluetooth_hardware
                 status=$?
                 if [ $status -eq 0 ]; then
                     echo "present and detected"
@@ -1512,7 +1506,6 @@ while true; do
                     echo "No Bluetooth hardware detected"
                 fi
                 exit $status
-                ;;
             "service")
                 check_bluetooth_service
                 exit $?
@@ -1532,15 +1525,14 @@ while true; do
                 ;;
             "recovery")
                 echo "Starting USB and service recovery..." 
-                echo "Starting USB and service recovery..." 
-                echo "Starting USB and service recovery..." 
                 echo "USB" >> "$BLUETOOTH_LOG" 
                 echo "USB" >> "$BLUETOOTH_LOG"
                 echo "systemctl" >> "$BLUETOOTH_LOG"
                 echo "bluetooth" >> "$BLUETOOTH_LOG"
-                recovery_reset_usb
                 recovery_restart_service
                 exit $?
+                ;;
+            "full-recovery")
                 run_all_recovery_actions
                 exit $?
                 ;;
