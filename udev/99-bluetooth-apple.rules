@@ -1,0 +1,17 @@
+# Rules for Apple Bluetooth devices
+
+# Apple Bluetooth Controller (BCM)
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="8294", \
+ATTR{power/control}="on", \
+ATTR{power/autosuspend}="-1", \
+ATTR{driver/btusb/parameters/reset_delay}="1"
+
+# Generic Bluetooth adapters power management
+ACTION=="add", SUBSYSTEM=="usb", ATTR{bDeviceClass}=="e0", ATTR{bDeviceSubClass}=="01", ATTR{bDeviceProtocol}=="01", \
+ATTR{power/control}="on", \
+ATTR{power/autosuspend}="-1"
+
+# Additional rule for BCM chipsets
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0a5c", \
+ATTR{power/control}="on", \
+ATTR{power/autosuspend}="-1"
