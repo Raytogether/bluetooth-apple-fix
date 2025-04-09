@@ -1,0 +1,1 @@
+[Unit]\nDescription=Bluetooth Monitor and Auto-Recovery Service\nAfter=bluetooth.service\nWants=bluetooth.service\n\n[Service]\nType=simple\nExecStart=/usr/local/bin/bluetooth_monitor.sh --verbose\nRestart=always\nRestartSec=30\n\n[Install]\nWantedBy=multi-user.target
