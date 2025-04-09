@@ -1,0 +1,10 @@
+Usage: /home/donaldtanner/code/bluetooth-apple-fix/src/bluetooth_monitor.sh [OPTIONS]
+
+Options:
+  -h, --help       Display this help message and exit
+  -v, --verbose    Enable verbose output for troubleshooting
+  -o, --once       Run once and exit (don't loop)
+  -i, --interval   Set the check interval in seconds (default: 60)
+  -r, --recovery   Enable/disable automatic recovery actions (true/false, default: true)
+  -l, --log-dir    Set custom log directory (default: ~/system-management/monitoring/logs)
+
