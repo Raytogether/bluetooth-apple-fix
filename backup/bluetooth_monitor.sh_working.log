@@ -1,0 +1,20 @@
+donaldtanner@fedora:~$ bluetooth_monitor.sh
+INFO [2025-04-09 01:10:02]: ===== Bluetooth Monitor v1.0 =====
+INFO [2025-04-09 01:10:02]: Starting Bluetooth monitoring with interval: 60s
+INFO [2025-04-09 01:10:02]: Auto-recovery: true
+INFO [2025-04-09 01:10:02]: Log directory: /home/donaldtanner/system-management/monitoring/logs
+INFO [2025-04-09 01:10:02]: Checking Bluetooth status at 2025-04-09 01:10:02
+INFO [2025-04-09 01:10:02]: Bluetooth kernel modules are properly loaded
+INFO [2025-04-09 01:10:02]: Bluetooth hardware is present
+INFO [2025-04-09 01:10:02]: Bluetooth hardware is present
+INFO [2025-04-09 01:10:02]: Bluetooth service is running
+INFO [2025-04-09 01:10:02]: Bluetooth is fully functional
+INFO [2025-04-09 01:10:02]: Bluetooth is working properly
+INFO [2025-04-09 01:11:02]: === Starting check #2 ===
+INFO [2025-04-09 01:11:02]: Checking Bluetooth status at 2025-04-09 01:11:02
+INFO [2025-04-09 01:11:02]: Bluetooth kernel modules are properly loaded
+INFO [2025-04-09 01:11:02]: Bluetooth hardware is present
+INFO [2025-04-09 01:11:02]: Bluetooth hardware is present
+INFO [2025-04-09 01:11:02]: Bluetooth service is running
+INFO [2025-04-09 01:11:02]: Bluetooth is fully functional
+INFO [2025-04-09 01:11:02]: Bluetooth is working properly

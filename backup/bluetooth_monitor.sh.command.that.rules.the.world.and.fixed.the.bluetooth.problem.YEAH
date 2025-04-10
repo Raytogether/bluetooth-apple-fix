@@ -1,0 +1,318 @@
+sudo sh -c 'echo 1 > /sys/bus/usb/devices/1-6/1-6:1.2/authorized && rmmod btusb && modprobe btusb enable_autosuspend=1' && sudo ~/bin/bluetooth_monitor.sh --verbose --once
+---
+sudo sh -c 'echo 1 > /sys/bus/usb/devices/1-6/1-6:1.2/authorized && rmmod btusb && modprobe btusb enable_autosuspend=1' && sudo ~/bin/bluetooth_monitor.sh --verbose --once
+INFO [2025-04-08 19:26:26]: ===== Bluetooth Monitor v1.0 =====
+INFO [2025-04-08 19:26:26]: Starting Bluetooth monitoring with interval: 60s
+INFO [2025-04-08 19:26:26]: Auto-recovery: true
+INFO [2025-04-08 19:26:26]: Log directory: /root/system-management/monitoring/logs
+INFO [2025-04-08 19:26:26]: Checking Bluetooth status at 2025-04-08 19:26:26
+VERBOSE [2025-04-08 19:26:26]: Checking Bluetooth kernel modules...
+VERBOSE [2025-04-08 19:26:26]: Bluetooth kernel module is loaded (via lsmod)
+VERBOSE [2025-04-08 19:26:26]: Bluetooth USB driver (btusb) is in use by a device
+VERBOSE [2025-04-08 19:26:26]: Both Bluetooth modules are properly loaded
+INFO [2025-04-08 19:26:26]: Bluetooth kernel modules are properly loaded
+VERBOSE [2025-04-08 19:26:26]: Checking Bluetooth hardware presence...
+VERBOSE [2025-04-08 19:26:26]: Found Bluetooth controllers in sysfs:
+VERBOSE [2025-04-08 19:26:26]:   - hci0: USB device information: DEVTYPE=usb_interface
+DRIVER=btusb
+PRODUCT=5ac/8294/169
+TYPE=239/2/1
+INTERFACE=255/1/1
+MODALIAS=usb:v05ACp8294d0169dcEFdsc02dp01icFFisc01ip01in02
+VERBOSE [2025-04-08 19:26:26]:   - hci0: Power management control=auto, status=active
+INFO [2025-04-08 19:26:26]: Bluetooth hardware is present
+INFO [2025-04-08 19:26:26]: Bluetooth hardware is present
+VERBOSE [2025-04-08 19:26:26]: Checking Bluetooth service status...
+VERBOSE [2025-04-08 19:26:26]: Bluetooth service is active
+INFO [2025-04-08 19:26:26]: Bluetooth service is running
+VERBOSE [2025-04-08 19:26:26]: Checking Bluetooth functionality...
+WARNING [2025-04-08 19:26:26]: No Bluetooth controller available through bluetoothctl
+WARNING [2025-04-08 19:26:26]: Bluetooth is not functioning properly
+VERBOSE [2025-04-08 19:26:26]: Checking Bluetooth firmware...
+VERBOSE [2025-04-08 19:26:26]: Found 132 Bluetooth firmware files
+WARNING [2025-04-08 19:26:26]: Broadcom BCM Reset failure detected
+WARNING [2025-04-08 19:26:26]: Firmware loading issues detected:
+WARNING [2025-04-08 19:26:26]: [    0.000000] efi: EFI v2.4 by Apple
+[    0.000000] efi: Apple Mac detected, using EFI v1.10 runtime services only
+[    0.000000] DMI: Apple Inc. iMac17,1/Mac-B809C3757DA9BB8D, BIOS 170.0.0.0.0 06/17/2019
+[    0.012247] ACPI: RSDP 0x000000008AFFE014 000024 (v02 APPLE )
+[    0.012250] ACPI: XSDT 0x000000008AFB8188 0000CC (v01 APPLE  Apple00  00000000      01000013)
+[    0.012254] ACPI: FACP 0x000000008AFF8000 0000F4 (v05 APPLE  Apple00  00000000 Loki 0000005F)
+[    0.012257] ACPI: DSDT 0x000000008AFEE000 005DDF (v03 APPLE  iMac     00150001 INTL 20140424)
+[    0.012264] ACPI: ECDT 0x000000008AFFA000 000053 (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    0.012266] ACPI: HPET 0x000000008AFF7000 000038 (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    0.012268] ACPI: APIC 0x000000008AFF6000 0000BC (v02 APPLE  Apple00  00000001 Loki 0000005F)
+[    0.012270] ACPI: MCFG 0x000000008AFF5000 00003C (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    0.012272] ACPI: SBST 0x000000008AFF4000 000030 (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    0.012274] ACPI: SSDT 0x000000008AFED000 000024 (v01 APPLE  SmcDppt  00001000 INTL 20140424)
+[    0.012277] ACPI: SSDT 0x000000008AFEA000 000024 (v01 APPLE  PEG0SSD0 00001000 INTL 20140424)
+[    0.012279] ACPI: SSDT 0x000000008AFE7000 000031 (v01 APPLE  SsdtS3   00001000 INTL 20140424)
+[    0.012281] ACPI: SSDT 0x000000008AFE6000 000293 (v01 APPLE  SataAhci 00001000 INTL 20140424)
+[    0.012283] ACPI: SSDT 0x000000008AFE5000 0000B8 (v01 APPLE  Sdxc     00001000 INTL 20140424)
+[    0.012285] ACPI: SSDT 0x000000008AFE1000 003E1B (v02 APPLE  PcieTbt  00001000 INTL 20140424)
+[    0.012287] ACPI: SSDT 0x000000008AFD0000 00075E (v02 APPLE  Xhci     00001000 INTL 20140424)
+[    0.012300] ACPI: DMAR 0x000000008AFCA000 000088 (v01 APPLE  SKL      00000001 INTL 00000001)
+[    0.012302] ACPI: VFCT 0x000000008AFB9000 010084 (v01 APPLE  Apple00  00000001 AMD  31504F47)
+[    0.012322] ACPI: DMI detected to setup _OSI("Darwin"): Apple hardware
+[    0.207033] ACPI: [Firmware Bug]: BIOS _OSI(Linux) query honored via cmdline
+[    0.266417] apple-properties: device path parse error -19 at 0x14:
+[    0.266419] apple-properties: 00000000: 52 00 00 00 01 00 00 00 02 01 0c 00 d0 41 03 0a  R............A..
+[    0.266420] apple-properties: 00000010: 00 00 00 00 01 01 06 00 00 02 7f ff 04 00 2c 00  ..............,.
+[    0.266422] apple-properties: 00000020: 00 00 41 00 41 00 50 00 4c 00 2c 00 69 00 67 00  ..A.A.P.L.,.i.g.
+[    0.266423] apple-properties: 00000030: 2d 00 70 00 6c 00 61 00 74 00 66 00 6f 00 72 00  -.p.l.a.t.f.o.r.
+[    0.266424] apple-properties: 00000040: 6d 00 2d 00 69 00 64 00 00 00 08 00 00 00 01 00  m.-.i.d.........
+[    0.266424] apple-properties: 00000050: 12 19                                            ..
+[    0.421177] pcieport 0000:06:00.0: pciehp: Slot #0 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.421395] pcieport 0000:06:03.0: pciehp: Slot #3 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.421622] pcieport 0000:06:04.0: pciehp: Slot #4 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.421810] pcieport 0000:06:05.0: pciehp: Slot #5 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.421997] pcieport 0000:06:06.0: pciehp: Slot #6 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.442097] Relocating firmware framebuffer to offset 0x0000000000300000[d] within [mem 0xa0000000-0xafffffff flags 0x14220c]
+[    0.484683] Btrfs loaded, zoned=yes, fsverity=yes
+[    0.749835] ata2.00: ATA-8: APPLE SSD SM1024G, BXZ53A0Q, max UDMA/133
+[    0.751525] scsi 1:0:0:0: Direct-Access     ATA      APPLE SSD SM1024 3A0Q PQ: 0 ANSI: 5
+[    1.814226] systemd[1]: Found device dev-disk-by-uuid-8ff74efa-2987-4adb-bd0b-ba577a9a19b5.device - APPLE_SSD_SM1024G 3.
+[    1.816656] ACPI: video: [Firmware Bug]: ACPI(GFX0) defines _DOD but not _DOS
+[    1.835445] usb 1-5: Manufacturer: Apple Inc.
+[    2.081964] usb 1-6: Product: Bluetooth USB Host Controller
+[    2.089541] input: Broadcom Corp. Bluetooth USB Host Controller as /devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6:1.0/0003:05AC:8294.0006/input/input11
+[    2.170584] hid-generic 0003:05AC:8294.0006: input,hidraw5: USB HID v1.11 Keyboard [Broadcom Corp. Bluetooth USB Host Controller] on usb-0000:00:14.0-6/input0
+[    2.175037] input: Broadcom Corp. Bluetooth USB Host Controller as /devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6:1.1/0003:05AC:8294.0007/input/input12
+[    2.175208] hid-generic 0003:05AC:8294.0007: input,hidraw6: USB HID v1.11 Mouse [Broadcom Corp. Bluetooth USB Host Controller] on usb-0000:00:14.0-6/input1
+[    6.029619] [drm] Found UVD firmware Version: 1.68 Family ID: 10
+[    6.036732] [drm] Found VCE firmware Version: 52.8 Binary ID: 3
+[  108.880047] BTRFS: device label fedora devid 1 transid 19446 /dev/mapper/luks-8ff74efa-2987-4adb-bd0b-ba577a9a19b5 (252:0) scanned by mount (1827)
+[  108.880891] BTRFS info (device dm-0): first mount of filesystem a781b8ce-849f-495a-8ba0-d402734aa09e
+[  108.880926] BTRFS info (device dm-0): using crc32c (crc32c-x86_64) checksum algorithm
+[  108.880938] BTRFS info (device dm-0): using free-space-tree
+[  110.245705] systemd[1]: systemd-hibernate-clear.service - Clear Stale Hibernate Storage Info was skipped because of an unmet condition check (ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67).
+[  110.265043] BTRFS info (device dm-0 state M): use zstd compression, level 1
+[  110.940883] usbcore: registered new device driver apple-mfi-fastcharge
+[  111.074337] Bluetooth: Core ver 2.22
+[  111.074361] NET: Registered PF_BLUETOOTH protocol family
+[  111.074363] Bluetooth: HCI device and connection manager initialized
+[  111.074366] Bluetooth: HCI socket layer initialized
+[  111.074368] Bluetooth: L2CAP socket layer initialized
+[  111.074374] Bluetooth: SCO socket layer initialized
+[  111.196814] usbcore: registered new interface driver btusb
+[  111.337775] applesmc: key=729 fan=1 temp=98 index=94 acc=0 lux=2 kbd=0
+[  111.337973] applesmc applesmc.768: hwmon_device_register() is deprecated. Please convert the driver to use hwmon_device_register_with_info().
+[  111.344282] Modules linked in: wl(POE+) kvm_intel(+) snd_hda_codec_cirrus snd_compress ac97_bus snd_pcm_dmaengine snd_hda_codec_hdmi iTCO_wdt snd_hda_codec_generic mei_hdcp mei_pxp intel_pmc_bxt kvm snd_hda_intel at24 iTCO_vendor_support applesmc snd_intel_dspcfg snd_intel_sdw_acpi btusb snd_hda_codec uvcvideo btrtl rapl snd_hda_core btintel snd_hwdep intel_cstate uvc cfg80211 videobuf2_vmalloc snd_seq mei_me videobuf2_memops btbcm snd_seq_device btmtk intel_uncore i2c_i801 videobuf2_v4l2 tg3 mei snd_pcm pcspkr videobuf2_common bluetooth i2c_smbus videodev mc snd_timer rfkill snd apple_mfi_fastcharge soundcore joydev loop nfnetlink zram lz4hc_compress lz4_compress dm_crypt hid_logitech_hidpp uas usb_storage amdgpu hid_logitech_dj amdxcp i2c_algo_bit drm_ttm_helper ttm sdhci_pci drm_exec sdhci_uhs2 gpu_sched sdhci drm_suballoc_helper drm_panel_backlight_quirks drm_buddy cqhci drm_display_helper mmc_core polyval_clmulni polyval_generic ghash_clmulni_intel sha512_ssse3 cec sha256_ssse3 sha1_ssse3 video wmi fuse
+[  111.344367] Hardware name: Apple Inc. iMac17,1/Mac-B809C3757DA9BB8D, BIOS 170.0.0.0.0 06/17/2019
+[  112.521383] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[  112.521388] Bluetooth: BNEP filters: protocol multicast
+[  112.521393] Bluetooth: BNEP socket layer initialized
+[  113.195442] Bluetooth: hci0: command 0x0c03 tx timeout
+[  113.195486] Bluetooth: hci0: BCM: Reset failed (-110)
+[ 9733.678925] usbcore: deregistering interface driver btusb
+[ 9733.852097] btusb: unknown parameter 'reset_delay' ignored
+[ 9733.852168] btusb 1-6:1.2: Interface 2 is not authorized for usage
+[ 9733.852200] usbcore: registered new interface driver btusb
+[ 9841.838243] hid-generic 0003:05AC:8294.0006: usb_submit_urb(ctrl) failed: -1
+[ 9878.116413] usbcore: deregistering interface driver btusb
+[ 9878.161430] usbcore: registered new interface driver btusb
+[ 9878.277065] Bluetooth: hci0: BCM: chip id 102 build 0730
+[ 9878.278082] Bluetooth: hci0: BCM: product 05ac:8294
+[ 9878.279031] Bluetooth: hci0: BCM: features 0x2f
+[ 9878.297065] Bluetooth: hci0: BCM20703A1 Generic USB UHE Apple 20Mhz fcbga_X238D
+INFO [2025-04-08 19:26:26]: Issues detected - recovery actions may be needed
+WARNING [2025-04-08 19:26:26]: Bluetooth issues detected in check #1
+INFO [2025-04-08 19:26:26]: Starting automatic recovery...
+RECOVERY [2025-04-08 19:26:26]: Starting recovery sequence...
+VERBOSE [2025-04-08 19:26:26]: Checking for Broadcom BCM reset failures...
+WARNING [2025-04-08 19:26:26]: Detected Broadcom BCM Reset failure in dmesg
+RECOVERY [2025-04-08 19:26:26]: Detected BCM reset failure, attempting specialized fix...
+RECOVERY [2025-04-08 19:26:26]: Attempting to fix Broadcom BCM reset failure...
+RECOVERY [2025-04-08 19:26:26]: Searching for Broadcom firmware files...
+WARNING [2025-04-08 19:26:26]: No Broadcom firmware files found
+RECOVERY [2025-04-08 19:26:26]: Executing specialized Broadcom reset sequence...
+RECOVERY [2025-04-08 19:26:26]: Found Apple Bluetooth controller: Bus 001 Device 006: ID 05ac:8294 Apple, Inc. Bluetooth USB Host Controller
+RECOVERY [2025-04-08 19:26:26]: Attempting USB power cycle for device 001:006
+Use given bus/device number: 001/006 ...
+Look for default devices ...
+ bus/device number matched
+ Found devices in default mode (1)
+Get the current device configuration ...
+Current configuration number is 1
+Use interface number 0
+ with class 3
+Warning: no switching method given. See documentation
+Reset USB device .
+ Device was reset
+-> Run lsusb to note any changes. Bye!
+
+RECOVERY [2025-04-08 19:26:27]: Successfully reset USB device using usb_modeswitch
+RECOVERY [2025-04-08 19:26:27]: Restarting Bluetooth service to apply Broadcom fixes...
+RECOVERY [2025-04-08 19:26:27]: Bluetooth service restarted successfully
+RECOVERY [2025-04-08 19:26:32]: Broadcom BCM reset fix succeeded at least partially
+RECOVERY [2025-04-08 19:26:32]: BCM reset fix successful
+RECOVERY [2025-04-08 19:26:32]: Step 1: Addressing power management issues
+RECOVERY [2025-04-08 19:26:32]: Attempting to fix power management for Bluetooth USB device...
+WARNING [2025-04-08 19:26:32]: Power control file not found for /sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6:1.2
+WARNING [2025-04-08 19:26:32]: Power management fix unsuccessful, continuing with other recovery methods
+RECOVERY [2025-04-08 19:26:32]: Step 2: Resetting Bluetooth USB device
+RECOVERY [2025-04-08 19:26:32]: Attempting to reset Bluetooth USB device...
+VERBOSE [2025-04-08 19:26:32]: Searching for USB path starting from: /sys/devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6:1.2
+RECOVERY [2025-04-08 19:26:32]: Found Bluetooth USB device at: /sys/devices/pci0000:00/0000:00:14.0/usb1/1-6
+RECOVERY [2025-04-08 19:26:32]: USB bus:device = 1:6
+RECOVERY [2025-04-08 19:26:32]: Attempting reset via authorized flag method...
+RECOVERY [2025-04-08 19:26:32]: Disabling USB device...
+RECOVERY [2025-04-08 19:26:34]: Re-enabling USB device...
+RECOVERY [2025-04-08 19:26:35]: Waiting up to 10s for device re-enumeration...
+RECOVERY [2025-04-08 19:26:35]: Device re-enumerated after 0s
+RECOVERY [2025-04-08 19:26:36]: Device successfully reset using authorized flag method
+RECOVERY [2025-04-08 19:26:36]: USB reset successful
+RECOVERY [2025-04-08 19:26:36]: Step 3: Restarting Bluetooth service
+RECOVERY [2025-04-08 19:26:36]: Attempting to restart Bluetooth service...
+RECOVERY [2025-04-08 19:26:36]: Stopping bluetooth service...
+RECOVERY [2025-04-08 19:26:38]: Starting bluetooth service...
+RECOVERY [2025-04-08 19:26:38]: Bluetooth service restarted successfully
+RECOVERY [2025-04-08 19:26:38]: Service restart successful
+RECOVERY [2025-04-08 19:26:38]: Step 4: Reloading Bluetooth kernel modules
+RECOVERY [2025-04-08 19:26:38]: Attempting to reload Bluetooth kernel modules...
+RECOVERY [2025-04-08 19:26:38]: Unloading bluetooth module...
+modprobe: FATAL: Module bluetooth is in use.
+WARNING [2025-04-08 19:26:38]: Failed to unload bluetooth module
+RECOVERY [2025-04-08 19:26:40]: Reloading bluetooth module...
+RECOVERY [2025-04-08 19:26:40]: Reloading btusb module...
+RECOVERY [2025-04-08 19:26:40]: Bluetooth modules reloaded successfully
+RECOVERY [2025-04-08 19:26:40]: Module reload successful
+RECOVERY [2025-04-08 19:26:40]: Recovery sequence complete
+RECOVERY [2025-04-08 19:26:40]: Recovery sequence completed with at least one successful action (4/5)
+INFO [2025-04-08 19:26:40]: Automatic recovery completed successfully
+INFO [2025-04-08 19:26:43]: Checking Bluetooth status at 2025-04-08 19:26:43
+VERBOSE [2025-04-08 19:26:43]: Checking Bluetooth kernel modules...
+VERBOSE [2025-04-08 19:26:43]: Bluetooth kernel module is loaded (via lsmod)
+VERBOSE [2025-04-08 19:26:43]: Bluetooth USB driver (btusb) is in use by a device
+VERBOSE [2025-04-08 19:26:43]: Both Bluetooth modules are properly loaded
+INFO [2025-04-08 19:26:43]: Bluetooth kernel modules are properly loaded
+VERBOSE [2025-04-08 19:26:43]: Checking Bluetooth hardware presence...
+VERBOSE [2025-04-08 19:26:43]: Found Bluetooth controllers in sysfs:
+VERBOSE [2025-04-08 19:26:43]:   - hci0: USB device information: DEVTYPE=usb_interface
+DRIVER=btusb
+PRODUCT=5ac/8294/169
+TYPE=239/2/1
+INTERFACE=255/1/1
+MODALIAS=usb:v05ACp8294d0169dcEFdsc02dp01icFFisc01ip01in02
+VERBOSE [2025-04-08 19:26:43]:   - hci0: Power management control=auto, status=active
+INFO [2025-04-08 19:26:43]: Bluetooth hardware is present
+INFO [2025-04-08 19:26:43]: Bluetooth hardware is present
+VERBOSE [2025-04-08 19:26:43]: Checking Bluetooth service status...
+VERBOSE [2025-04-08 19:26:43]: Bluetooth service is active
+INFO [2025-04-08 19:26:43]: Bluetooth service is running
+VERBOSE [2025-04-08 19:26:43]: Checking Bluetooth functionality...
+VERBOSE [2025-04-08 19:26:43]: Bluetooth controller is functional: Controller 28:F0:76:5B:6C:3F (public)
+INFO [2025-04-08 19:26:43]: Bluetooth is fully functional
+VERBOSE [2025-04-08 19:26:43]: Checking Bluetooth firmware...
+VERBOSE [2025-04-08 19:26:43]: Found 132 Bluetooth firmware files
+WARNING [2025-04-08 19:26:43]: Broadcom BCM Reset failure detected
+WARNING [2025-04-08 19:26:43]: Firmware loading issues detected:
+WARNING [2025-04-08 19:26:43]: [    0.000000] efi: EFI v2.4 by Apple
+[    0.000000] efi: Apple Mac detected, using EFI v1.10 runtime services only
+[    0.000000] DMI: Apple Inc. iMac17,1/Mac-B809C3757DA9BB8D, BIOS 170.0.0.0.0 06/17/2019
+[    0.012247] ACPI: RSDP 0x000000008AFFE014 000024 (v02 APPLE )
+[    0.012250] ACPI: XSDT 0x000000008AFB8188 0000CC (v01 APPLE  Apple00  00000000      01000013)
+[    0.012254] ACPI: FACP 0x000000008AFF8000 0000F4 (v05 APPLE  Apple00  00000000 Loki 0000005F)
+[    0.012257] ACPI: DSDT 0x000000008AFEE000 005DDF (v03 APPLE  iMac     00150001 INTL 20140424)
+[    0.012264] ACPI: ECDT 0x000000008AFFA000 000053 (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    0.012266] ACPI: HPET 0x000000008AFF7000 000038 (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    0.012268] ACPI: APIC 0x000000008AFF6000 0000BC (v02 APPLE  Apple00  00000001 Loki 0000005F)
+[    0.012270] ACPI: MCFG 0x000000008AFF5000 00003C (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    0.012272] ACPI: SBST 0x000000008AFF4000 000030 (v01 APPLE  Apple00  00000001 Loki 0000005F)
+[    0.012274] ACPI: SSDT 0x000000008AFED000 000024 (v01 APPLE  SmcDppt  00001000 INTL 20140424)
+[    0.012277] ACPI: SSDT 0x000000008AFEA000 000024 (v01 APPLE  PEG0SSD0 00001000 INTL 20140424)
+[    0.012279] ACPI: SSDT 0x000000008AFE7000 000031 (v01 APPLE  SsdtS3   00001000 INTL 20140424)
+[    0.012281] ACPI: SSDT 0x000000008AFE6000 000293 (v01 APPLE  SataAhci 00001000 INTL 20140424)
+[    0.012283] ACPI: SSDT 0x000000008AFE5000 0000B8 (v01 APPLE  Sdxc     00001000 INTL 20140424)
+[    0.012285] ACPI: SSDT 0x000000008AFE1000 003E1B (v02 APPLE  PcieTbt  00001000 INTL 20140424)
+[    0.012287] ACPI: SSDT 0x000000008AFD0000 00075E (v02 APPLE  Xhci     00001000 INTL 20140424)
+[    0.012300] ACPI: DMAR 0x000000008AFCA000 000088 (v01 APPLE  SKL      00000001 INTL 00000001)
+[    0.012302] ACPI: VFCT 0x000000008AFB9000 010084 (v01 APPLE  Apple00  00000001 AMD  31504F47)
+[    0.012322] ACPI: DMI detected to setup _OSI("Darwin"): Apple hardware
+[    0.207033] ACPI: [Firmware Bug]: BIOS _OSI(Linux) query honored via cmdline
+[    0.266417] apple-properties: device path parse error -19 at 0x14:
+[    0.266419] apple-properties: 00000000: 52 00 00 00 01 00 00 00 02 01 0c 00 d0 41 03 0a  R............A..
+[    0.266420] apple-properties: 00000010: 00 00 00 00 01 01 06 00 00 02 7f ff 04 00 2c 00  ..............,.
+[    0.266422] apple-properties: 00000020: 00 00 41 00 41 00 50 00 4c 00 2c 00 69 00 67 00  ..A.A.P.L.,.i.g.
+[    0.266423] apple-properties: 00000030: 2d 00 70 00 6c 00 61 00 74 00 66 00 6f 00 72 00  -.p.l.a.t.f.o.r.
+[    0.266424] apple-properties: 00000040: 6d 00 2d 00 69 00 64 00 00 00 08 00 00 00 01 00  m.-.i.d.........
+[    0.266424] apple-properties: 00000050: 12 19                                            ..
+[    0.421177] pcieport 0000:06:00.0: pciehp: Slot #0 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.421395] pcieport 0000:06:03.0: pciehp: Slot #3 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.421622] pcieport 0000:06:04.0: pciehp: Slot #4 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.421810] pcieport 0000:06:05.0: pciehp: Slot #5 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.421997] pcieport 0000:06:06.0: pciehp: Slot #6 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.442097] Relocating firmware framebuffer to offset 0x0000000000300000[d] within [mem 0xa0000000-0xafffffff flags 0x14220c]
+[    0.484683] Btrfs loaded, zoned=yes, fsverity=yes
+[    0.749835] ata2.00: ATA-8: APPLE SSD SM1024G, BXZ53A0Q, max UDMA/133
+[    0.751525] scsi 1:0:0:0: Direct-Access     ATA      APPLE SSD SM1024 3A0Q PQ: 0 ANSI: 5
+[    1.814226] systemd[1]: Found device dev-disk-by-uuid-8ff74efa-2987-4adb-bd0b-ba577a9a19b5.device - APPLE_SSD_SM1024G 3.
+[    1.816656] ACPI: video: [Firmware Bug]: ACPI(GFX0) defines _DOD but not _DOS
+[    1.835445] usb 1-5: Manufacturer: Apple Inc.
+[    2.081964] usb 1-6: Product: Bluetooth USB Host Controller
+[    2.089541] input: Broadcom Corp. Bluetooth USB Host Controller as /devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6:1.0/0003:05AC:8294.0006/input/input11
+[    2.170584] hid-generic 0003:05AC:8294.0006: input,hidraw5: USB HID v1.11 Keyboard [Broadcom Corp. Bluetooth USB Host Controller] on usb-0000:00:14.0-6/input0
+[    2.175037] input: Broadcom Corp. Bluetooth USB Host Controller as /devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6:1.1/0003:05AC:8294.0007/input/input12
+[    2.175208] hid-generic 0003:05AC:8294.0007: input,hidraw6: USB HID v1.11 Mouse [Broadcom Corp. Bluetooth USB Host Controller] on usb-0000:00:14.0-6/input1
+[    6.029619] [drm] Found UVD firmware Version: 1.68 Family ID: 10
+[    6.036732] [drm] Found VCE firmware Version: 52.8 Binary ID: 3
+[  108.880047] BTRFS: device label fedora devid 1 transid 19446 /dev/mapper/luks-8ff74efa-2987-4adb-bd0b-ba577a9a19b5 (252:0) scanned by mount (1827)
+[  108.880891] BTRFS info (device dm-0): first mount of filesystem a781b8ce-849f-495a-8ba0-d402734aa09e
+[  108.880926] BTRFS info (device dm-0): using crc32c (crc32c-x86_64) checksum algorithm
+[  108.880938] BTRFS info (device dm-0): using free-space-tree
+[  110.245705] systemd[1]: systemd-hibernate-clear.service - Clear Stale Hibernate Storage Info was skipped because of an unmet condition check (ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67).
+[  110.265043] BTRFS info (device dm-0 state M): use zstd compression, level 1
+[  110.940883] usbcore: registered new device driver apple-mfi-fastcharge
+[  111.074337] Bluetooth: Core ver 2.22
+[  111.074361] NET: Registered PF_BLUETOOTH protocol family
+[  111.074363] Bluetooth: HCI device and connection manager initialized
+[  111.074366] Bluetooth: HCI socket layer initialized
+[  111.074368] Bluetooth: L2CAP socket layer initialized
+[  111.074374] Bluetooth: SCO socket layer initialized
+[  111.196814] usbcore: registered new interface driver btusb
+[  111.337775] applesmc: key=729 fan=1 temp=98 index=94 acc=0 lux=2 kbd=0
+[  111.337973] applesmc applesmc.768: hwmon_device_register() is deprecated. Please convert the driver to use hwmon_device_register_with_info().
+[  111.344282] Modules linked in: wl(POE+) kvm_intel(+) snd_hda_codec_cirrus snd_compress ac97_bus snd_pcm_dmaengine snd_hda_codec_hdmi iTCO_wdt snd_hda_codec_generic mei_hdcp mei_pxp intel_pmc_bxt kvm snd_hda_intel at24 iTCO_vendor_support applesmc snd_intel_dspcfg snd_intel_sdw_acpi btusb snd_hda_codec uvcvideo btrtl rapl snd_hda_core btintel snd_hwdep intel_cstate uvc cfg80211 videobuf2_vmalloc snd_seq mei_me videobuf2_memops btbcm snd_seq_device btmtk intel_uncore i2c_i801 videobuf2_v4l2 tg3 mei snd_pcm pcspkr videobuf2_common bluetooth i2c_smbus videodev mc snd_timer rfkill snd apple_mfi_fastcharge soundcore joydev loop nfnetlink zram lz4hc_compress lz4_compress dm_crypt hid_logitech_hidpp uas usb_storage amdgpu hid_logitech_dj amdxcp i2c_algo_bit drm_ttm_helper ttm sdhci_pci drm_exec sdhci_uhs2 gpu_sched sdhci drm_suballoc_helper drm_panel_backlight_quirks drm_buddy cqhci drm_display_helper mmc_core polyval_clmulni polyval_generic ghash_clmulni_intel sha512_ssse3 cec sha256_ssse3 sha1_ssse3 video wmi fuse
+[  111.344367] Hardware name: Apple Inc. iMac17,1/Mac-B809C3757DA9BB8D, BIOS 170.0.0.0.0 06/17/2019
+[  112.521383] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[  112.521388] Bluetooth: BNEP filters: protocol multicast
+[  112.521393] Bluetooth: BNEP socket layer initialized
+[  113.195442] Bluetooth: hci0: command 0x0c03 tx timeout
+[  113.195486] Bluetooth: hci0: BCM: Reset failed (-110)
+[ 9733.678925] usbcore: deregistering interface driver btusb
+[ 9733.852097] btusb: unknown parameter 'reset_delay' ignored
+[ 9733.852168] btusb 1-6:1.2: Interface 2 is not authorized for usage
+[ 9733.852200] usbcore: registered new interface driver btusb
+[ 9841.838243] hid-generic 0003:05AC:8294.0006: usb_submit_urb(ctrl) failed: -1
+[ 9878.116413] usbcore: deregistering interface driver btusb
+[ 9878.161430] usbcore: registered new interface driver btusb
+[ 9878.277065] Bluetooth: hci0: BCM: chip id 102 build 0730
+[ 9878.278082] Bluetooth: hci0: BCM: product 05ac:8294
+[ 9878.279031] Bluetooth: hci0: BCM: features 0x2f
+[ 9878.297065] Bluetooth: hci0: BCM20703A1 Generic USB UHE Apple 20Mhz fcbga_X238D
+[ 9878.365255] Bluetooth: MGMT ver 1.23
+[ 9878.380338] Bluetooth: RFCOMM TTY layer initialized
+[ 9878.380347] Bluetooth: RFCOMM socket layer initialized
+[ 9878.380354] Bluetooth: RFCOMM ver 1.11
+[ 9879.829024] Bluetooth: hci0: unexpected event for opcode 0x0c1a
+[ 9879.830028] Bluetooth: hci0: BCM: chip id 102 build 0730
+[ 9879.831080] Bluetooth: hci0: BCM: product 05ac:8294
+[ 9879.832077] Bluetooth: hci0: BCM: features 0x2f
+[ 9879.848040] Bluetooth: hci0: fedora
+[ 9879.919225] Bluetooth: MGMT ver 1.23
+[ 9886.947207] input: Broadcom Corp. Bluetooth USB Host Controller as /devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6:1.0/0003:05AC:8294.0009/input/input28
+[ 9887.026491] hid-generic 0003:05AC:8294.0009: input,hidraw4: USB HID v1.11 Keyboard [Broadcom Corp. Bluetooth USB Host Controller] on usb-0000:00:14.0-6/input0
+[ 9887.027040] input: Broadcom Corp. Bluetooth USB Host Controller as /devices/pci0000:00/0000:00:14.0/usb1/1-6/1-6:1.1/0003:05AC:8294.000A/input/input29
+[ 9887.027142] hid-generic 0003:05AC:8294.000A: input,hidraw5: USB HID v1.11 Mouse [Broadcom Corp. Bluetooth USB Host Controller] on usb-0000:00:14.0-6/input1
+[ 9887.136056] Bluetooth: hci0: BCM: chip id 102 build 0730
+[ 9887.136999] Bluetooth: hci0: BCM: product 05ac:8294
+[ 9887.137976] Bluetooth: hci0: BCM: features 0x2f
+[ 9887.154043] Bluetooth: hci0: fedora
+[ 9887.222279] Bluetooth: MGMT ver 1.23
+INFO [2025-04-08 19:26:43]: Bluetooth is working properly
+INFO [2025-04-08 19:26:43]: Recovery successfully resolved the issues
+INFO [2025-04-08 19:26:43]: Single check completed, exiting
+---
+
+
+
