@@ -1,0 +1,1 @@
+# Python bytecode\n__pycache__/\n*.py[cod]\n\n# Logs\n*.log\n\n# System files\n.DS_Store\n\n# Editor files\n.vscode/\n.idea/\n*.swp\n\n# Build output\nbuild/\ndist/\n\n# Environment\n.env\nvenv/\n\n# Test output\ntests/output/\n\n# Local configuration\nconfig.local

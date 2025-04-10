@@ -1,8 +1,3 @@
-# Bluetooth Apple Fix
-
-## Overview
-A comprehensive solution for handling Bluetooth connectivity issues on Apple devices, particularly focusing on BCM reset failures and power management issues.
-
 ## Features
 - Automatic detection of Bluetooth issues
 - Smart recovery mechanisms
@@ -47,11 +42,14 @@ This solution implements several layers of persistence to ensure reliable Blueto
 
 ## Documentation
 - [User Guide](docs/user/usage.md)
-- [Technical Documentation](docs/technical/implementation.md)
+- [Post-Reboot Verification](docs/user/post-reboot-verification.md)
+- [Technical Findings](docs/technical/technical-findings.md)
+- [BCM Reset Failure Analysis](BCM_RESET_FAILURE.md)
+- [Recovery Procedures](docs/technical/recovery-procedure.md)
+- [Module Parameters](docs/user/module-parameters.md)
+- [Technical Implementation](docs/technical/implementation.md)
 - [Persistence Details](docs/technical/persistence.md)
-- [Module Parameters](docs/module-parameters.md)
-- [Optimal Kernel Parameters](docs/optimal_bt_params.md)
-- [Working State Documentation](/home/donaldtanner/Documents/bluetooth-working-fix/)
+- [Project History](docs/development/project-history.md)
 
 ## Requirements
 - Linux-based system
