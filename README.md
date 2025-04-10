@@ -42,7 +42,9 @@ This solution implements several layers of persistence to ensure reliable Blueto
 
 ## Documentation
 - [User Guide](docs/user/usage.md)
+- [Post-Reboot Verification](docs/user/post-reboot-verification.md)
 - [Technical Findings](docs/technical/technical-findings.md)
+- [BCM Reset Failure Analysis](BCM_RESET_FAILURE.md)
 - [Recovery Procedures](docs/technical/recovery-procedure.md)
 - [Module Parameters](docs/user/module-parameters.md)
 - [Technical Implementation](docs/technical/implementation.md)
