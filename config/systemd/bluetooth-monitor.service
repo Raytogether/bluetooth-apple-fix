@@ -1,0 +1,16 @@
+[Unit]
+Description=Bluetooth Monitoring and Recovery Service
+After=bluetooth.service
+Wants=bluetooth.service
+
+[Service]
+Type=simple
+ExecStartPre=/usr/local/bin/setup_bt_params.sh --verbose
+ExecStart=/usr/local/bin/bluetooth_monitor.sh --verbose
+ExecStartPost=/usr/local/bin/monitor_bt_params.sh --once
+Restart=always
+RestartSec=30
+User=root
+
+[Install]
+WantedBy=multi-user.target
